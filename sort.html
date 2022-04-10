@@ -7,9 +7,40 @@
     <title>Document</title>
 </head>
 <body>
+
+    <h3>Array: <span id="alphabetical"></span></h3>
+    <h3>Array: <span id="alpha"></span></h3>
+     <button onclick="asending()">Sort Assending</button>
+     <button onclick="desending()">Sort Dessending</button>
+     <button onclick="randomRange()">Sort Random</button>
+     <br>
+
+     
     <script>
         //sort the asending values of array
         const arr = [4,51,4,8,4,4,1,7845,4,1,7,2,4,-4,1,4,-4,4,52,1]
+        const charch = ["Mengo", "Banana","Apple" , "Orange"]
+
+        var alphabetical = document.getElementById("alphabetical")
+        var alpha = document.getElementById("alpha")
+           alphabetical.innerHTML=arr
+           alpha.innerHTML=charch
+        const asending =()=>{
+            const assendingValues = arr.sort((p,q)=>{return p-q})
+            alphabetical.innerHTML=assendingValues
+            alpha.innerHTML=charch.sort()
+        }
+        function desending(){
+            const assendingValues = arr.sort((p,q)=>{return q-p})
+            alphabetical.innerHTML=assendingValues
+            alpha.innerHTML= charch.reverse()
+        }
+
+        //short the number in random range
+       function randomRange(){
+           const randRange = arr.sort((a,b)=> {return 0.5-Math.random()})
+           alphabetical.innerHTML=randRange
+       }
         //here using compare function in sort method we can return assending order array
       const result = arr.sort((a,b)=>{return a-b})
         console.log(result)
